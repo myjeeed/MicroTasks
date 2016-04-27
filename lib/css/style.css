@@ -6,18 +6,7 @@
 	box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-#stage{
-	border-style: dashed;
-	border-width: 2px;
-}
 
-#stagetext{
-	text-align: center;
-}
-
-#stageimg{
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-    
+p{
+	font-weight: bold;
 }

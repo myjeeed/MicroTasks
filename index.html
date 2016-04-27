@@ -24,9 +24,9 @@
 <body>
     <div class="container">
         <div class="jumbotron">
-            <h1>Extract items from a shopping receipt:</h1>
-            <br>
-            <div class="row">
+            <h1>Extract summary information from a shopping receipt</h1>
+            </div><br>
+            <!-- <div class="row">
                 <div class="col-md-4" id="stage">
                     <br>
                     <img src="resources/icons/receipt.png" height="100" id="stageimg"/><p></p>
@@ -43,7 +43,7 @@
                     <p id="stagetext">3) click the submit button</p>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="row">
             <div class="col-md-5">
@@ -67,11 +67,70 @@
             $reset: $(".reset")
             });
             </script>
-            <div class="col-md-7">
-                <div class="form-group" id="receipt-input-form">
-                    <button id="valid_receipt_btn" type="button" class="btn btn-success btn-lg">Readable</button>&nbsp;&nbsp;&nbsp;
-                    <button id="invalid_receipt_btn" type="button" class="btn btn-danger btn-lg">Not Readable</button>
-                </div>
+
+<div class="col-md-7">
+  <p>Is receipt valid?</p>
+  <div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Yes
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#" data-value="No, receipt is too blurry">No, receipt is too blurry</a></li>
+    <li><a href="#" data-value="No, receipt is fake">No, receipt is fake</a></li>
+    <li><a href="#" data-value="No, receipt is not in English">No, receipt is not in English</a></li>
+    <li><a href="#" data-value="No, contact information is not provided">No, contact information is not provided</a></li>
+  </ul>
+</div>
+<script>
+$(".dropdown-menu li a").click(function(){
+  $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
+  $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
+});
+</script>
+<br>
+ <p>Write down the transaction date:</p>
+ 
+ <input type="date" class="form-control" placeholder="mm/dd/yyyy">    
+ <br>
+
+ <p>Total</p>
+ <input type="number" class="form-control" placeholder="0.00">
+<br>
+<p>Number of items purchased: (excluding gas/fuel)</p>
+<div class="radio">
+    <label>
+      <input type="radio" name="optionsRadios" id="optionsRadios1" value="Only gas/fuel listed" checked class="rd">
+      Only gas/fuel listed
+    </label><br>
+    <label>
+      <input type="radio" name="optionsRadios" id="optionsRadios1" value="No items- Credit slip" class="rd">
+      No items- Credit slip
+    </label><br>
+    <label>
+      <input type="radio" name="optionsRadios" id="optionsRadios1" value="No items- Return slip" class="rd">
+      No items- Return slip
+    </label><br>
+    <label>
+      <input type="radio" name="optionsRadios" id="optionsRadios1" value="yes"  class="rdnumber">
+      Number of items are:
+    </label>
+</div>
+<input type="number" class="form-control" placeholder="0" id="amount">
+<script>
+$("#amount").hide();
+$(".rdnumber").click(function (){
+    $("#amount").show();
+});
+$(".rd").click(function(){
+    $("#amount").hide();
+});
+</script>
+<br>
+<button type="button" class="btn btn-primary" id="prev-btn">Previous</button>
+<button type="button" class="btn btn-success" id="next-btn">Next</button>
+
+               
             </div>
         </div>
     </div>
