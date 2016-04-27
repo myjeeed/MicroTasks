@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <!-- Boostrap and jQuery CDN links -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+
+    <!-- Local stylesheet -->
+    <link rel="stylesheet" href="resources/style.css">
+
+
+
+    <title>MicroTask #1</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Extract items from a shopping receipt:</h1>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="resources/icons/receipt.png" height="100"/>
+                    <p>1) Check if receipt is valid and readable</p>
+                </div>
+
+                <div class="col-md-4">
+                    <img src="resources/icons/digitize.png" height="100"/>
+                    <p>2) Enter them inside the forms</p>
+                </div>
+
+                <div class="col-md-4">
+                    <img src="resources/icons/validate.png" height="100"/>
+                    <p>3) click submit</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-5">
+                <div>
+                    <img src="resources/receipts/r1.jpeg" width="450" class="bold" id="receipt"/>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="form-group" id="receipt-input-form">
+                    <button id="valid_receipt_btn" type="button" class="btn btn-success btn-lg">Valid and Readable</button>
+                    <button id="invalid_receipt_btn" type="button" class="btn btn-danger btn-lg">Not Valid or Not Readable</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Local script -->
+    <script src="resources/script.js"></script>
+</body>
+</html>
+
+<!--icons by lastspark, Arthur Shlain-->

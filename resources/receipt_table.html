@@ -1,0 +1,113 @@
+<table class="table table-striped" id="receipt-table">
+  <thead>
+	<tr>
+	  <th>#</th>
+	  <th>Type</th>
+	  <th>Quantity</th>
+	  <th>Item Number</th>
+	  <th>Price</th>
+	  <th>Per Item</th>
+	</tr>
+  </thead>
+  <tbody>
+	<tr>
+	  <th scope="row">1</th>
+	  <td class="dropdown">
+		  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Type
+		  <span class="caret"></span></button>
+
+		  <ul class="dropdown-menu">
+				<li><a href="#">Item</a></li>
+				<li><a href="#">Coupon</a></li>
+				<li><a href="#">Void</a></li>
+		  </ul>
+	</td>
+	  <td><input type="number" class="form-control" style="width: 100px;"></td>
+	  <td><input type="number" class="form-control" min="0.01" step="0.01" max="2500" value="0.00" style="width: 100px;"/></td>
+	  <td><input type="number" class="form-control" min="0.01" step="0.01" max="2500" value="0.00" style="width: 100px;"/></td>
+	  <td><input class="form-control" style="width: 100px;" disabled/></td>
+	</tr>
+	<tr>
+	  <th scope="row">1</th>
+	  <td class="dropdown">
+		  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Type
+		  <span class="caret"></span></button>
+
+		  <ul class="dropdown-menu">
+				<li><a href="#">Item</a></li>
+				<li><a href="#">Coupon</a></li>
+				<li><a href="#">Void</a></li>
+		  </ul>
+	</td>
+	  <td><input type="number" class="form-control" style="width: 100px;"></td>
+	  <td><input type="number" class="form-control" min="0.01" step="0.01" max="2500" value="0.00" style="width: 100px;"/></td>
+	  <td><input type="number" class="form-control" min="0.01" step="0.01" max="2500" value="0.00" style="width: 100px;"/></td>
+	  <td><input class="form-control" style="width: 100px;" disabled/></td>
+	</tr>
+	<tr>
+	  <th scope="row">1</th>
+	  <td class="dropdown">
+		  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Type
+		  <span class="caret"></span></button>
+
+		  <ul class="dropdown-menu">
+				<li><a href="#">Item</a></li>
+				<li><a href="#">Coupon</a></li>
+				<li><a href="#">Void</a></li>
+		  </ul>
+	</td>
+	  <td><input type="number" class="form-control" style="width: 100px;"></td>
+	  <td><input type="number" class="form-control" min="0.01" step="0.01" max="2500" value="0.00" style="width: 100px;"/></td>
+	  <td><input type="number" class="form-control" min="0.01" step="0.01" max="2500" value="0.00" style="width: 100px;"/></td>
+	  <td><input class="form-control" style="width: 100px;" disabled/></td>
+	</tr>
+	<tr>
+	  <th scope="row">1</th>
+	  <td class="dropdown">
+		  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Type
+		  <span class="caret"></span></button>
+
+		  <ul class="dropdown-menu">
+				<li><a href="#">Item</a></li>
+				<li><a href="#">Coupon</a></li>
+				<li><a href="#">Void</a></li>
+		  </ul>
+	</td>
+	  <td><input type="number" class="form-control" style="width: 100px;"></td>
+	  <td><input type="number" class="form-control" min="0.01" step="0.01" max="2500" value="0.00" style="width: 100px;"/></td>
+	  <td><input type="number" class="form-control" min="0.01" step="0.01" max="2500" value="0.00" style="width: 100px;"/></td>
+	  <td><input class="form-control" style="width: 100px;" disabled/></td>
+	</tr>
+  </tbody>
+</table>
+<button type="button" class="btn btn-primary" id="add-row-btn">Add Row</button>
+<button type="button" class="btn btn-success" id="next-btn">Next</button>
+<script>
+$('#next-btn').click(function(){
+	$('#receipt-table').fadeOut(300, function() { $(this).remove(); });
+	$('#next-btn').fadeOut(300, function() { $(this).remove(); });
+
+	//show the sub-total/tax/total and final submission
+
+	$('#receipt-input-form').load('http://cs.umd.edu/~majeed/InclusiveMicroTasks/resources/total_submit_form.html').hide().fadeIn(750);
+});
+$('#add-row-btn').click(function(){
+	$('#receipt-table tbody').append("	<tr> "+
+		  "<th scope='row'>1</th>"+
+		  "<td class='dropdown'>"+
+			  "<button class='btn btn-primary dropdown-toggle' type='button' data-toggle='dropdown'>Type"+
+			  "<span class='caret'></span></button>"+
+			  "<ul class='dropdown-menu'>"+
+					"<li><a href='#'>Item</a></li>"+
+					"<li><a href='#'>Coupon</a></li>"+
+					"<li><a href='#'>Void</a></li>"+
+			  "</ul>"+
+		"</td>"+
+		  "<td><input type='number' class='form-control' style='width: 100px;'></td>"+
+		  "<td><input type='number' class='form-control' min='0.01' step='0.01' max='2500' value='0.00' style='width: 100px;'/></td>"+
+		  "<td><input type='number' class='form-control' min='0.01' step='0.01' max='2500' value='0.00' style='width: 100px;'/></td>"+
+		 " <td><input class='form-control' style='width: 100px;' disabled/></td>"+
+		"</tr>");
+});
+
+</script>
