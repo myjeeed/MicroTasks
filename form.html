@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <!-- Boostrap and jQuery CDN links -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+
+    <!-- Local stylesheet -->
+    <link rel="stylesheet" href="lib/css/style.css">
+    <!-- Local script -->
+    <script src="lib/js/jquery.panzoom.js"></script>
+    <script src="lib/js/script.js"></script>
+
+
+    <title>MicroTask #1</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Extract items from a shopping receipt:</h1>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <br>
+                    <img src="resources/icons/receipt.png" height="100" id="stageimg"/><p></p>
+                    <p id="stagetext">1) Check if the receipt is readable</p>
+                </div>
+
+                <div class="col-md-4" id="stage">
+                    <img src="resources/icons/digitize.png" height="100" id="stageimg"/><p></p>
+                    <p id="stagetext">2) Enter the items in the forms</p>
+                </div>
+
+                <div class="col-md-4" >
+                    <img src="resources/icons/validate.png" height="100" id="stageimg"/><p></p>
+                    <p id="stagetext">3) click the submit button</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-5">
+                <div class="parent">
+                <div id="panzoom">
+                    <img src="resources/receipts/r1.jpeg" width="450"/>
+                </div>
+                </div>
+            <p></p>
+            <div class="buttons" style="text-align:center;">
+            <button class="zoom-in">Zoom In</button>
+            <button class="zoom-out">Zoom Out</button>
+            <input type="range" class="zoom-range">
+            <button class="reset">Reset</button></div>
+            </div>
+            <script>
+            $('#panzoom').panzoom({
+            $zoomIn: $(".zoom-in"),
+            $zoomOut: $(".zoom-out"),
+            $zoomRange: $(".zoom-range"),
+            $reset: $(".reset")
+            });
+            </script>
+            <div class="col-md-7">
+                <table class="table table-striped" id="receipt-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Type</th>
+      <th>Quantity</th>
+      <th>Item Number</th>
+      <th>Price</th>
+      <th>Per Item</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Type
+          <span class="caret"></span></button>
+
+          <ul class="dropdown-menu">
+                <li><a href="#">Item</a></li>
+                <li><a href="#">Coupon</a></li>
+                <li><a href="#">Void</a></li>
+          </ul>
+    </td>
+      <td><input type="number" class="form-control" style="width: 100px;"></td>
+      <td><input type="number" class="form-control" min="0.01" step="0.01" max="2500" value="0.00" style="width: 100px;"/></td>
+      <td><input type="number" class="form-control" min="0.01" step="0.01" max="2500" value="0.00" style="width: 100px;"/></td>
+      <td><input class="form-control" style="width: 100px;" disabled/></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Type
+          <span class="caret"></span></button>
+
+          <ul class="dropdown-menu">
+                <li><a href="#">Item</a></li>
+                <li><a href="#">Coupon</a></li>
+                <li><a href="#">Void</a></li>
+          </ul>
+    </td>
+      <td><input type="number" class="form-control" style="width: 100px;"></td>
+      <td><input type="number" class="form-control" min="0.01" step="0.01" max="2500" value="0.00" style="width: 100px;"/></td>
+      <td><input type="number" class="form-control" min="0.01" step="0.01" max="2500" value="0.00" style="width: 100px;"/></td>
+      <td><input class="form-control" style="width: 100px;" disabled/></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Type
+          <span class="caret"></span></button>
+
+          <ul class="dropdown-menu">
+                <li><a href="#">Item</a></li>
+                <li><a href="#">Coupon</a></li>
+                <li><a href="#">Void</a></li>
+          </ul>
+    </td>
+      <td><input type="number" class="form-control" style="width: 100px;"></td>
+      <td><input type="number" class="form-control" min="0.01" step="0.01" max="2500" value="0.00" style="width: 100px;"/></td>
+      <td><input type="number" class="form-control" min="0.01" step="0.01" max="2500" value="0.00" style="width: 100px;"/></td>
+      <td><input class="form-control" style="width: 100px;" disabled/></td>
+    </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Type
+          <span class="caret"></span></button>
+
+          <ul class="dropdown-menu">
+                <li><a href="#">Item</a></li>
+                <li><a href="#">Coupon</a></li>
+                <li><a href="#">Void</a></li>
+          </ul>
+    </td>
+      <td><input type="number" class="form-control" style="width: 100px;"></td>
+      <td><input type="number" class="form-control" min="0.01" step="0.01" max="2500" value="0.00" style="width: 100px;"/></td>
+      <td><input type="number" class="form-control" min="0.01" step="0.01" max="2500" value="0.00" style="width: 100px;"/></td>
+      <td><input class="form-control" style="width: 100px;" disabled/></td>
+    </tr>
+  </tbody>
+</table>
+<button type="button" class="btn btn-primary" id="add-row-btn">Add Row</button>
+<button type="button" class="btn btn-success" id="next-btn">Next</button>
+<script>
+$('#next-btn').click(function(){
+    $('#receipt-table').fadeOut(300, function() { $(this).remove(); });
+    $('#next-btn').fadeOut(300, function() { $(this).remove(); });
+
+    //show the sub-total/tax/total and final submission
+
+    $('#receipt-input-form').load('http://cs.umd.edu/~majeed/InclusiveMicroTasks/resources/total_submit_form.html').hide().fadeIn(750);
+});
+$('#add-row-btn').click(function(){
+    $('#receipt-table tbody').append("  <tr> "+
+          "<th scope='row'>1</th>"+
+          "<td class='dropdown'>"+
+              "<button class='btn btn-primary dropdown-toggle' type='button' data-toggle='dropdown'>Type"+
+              "<span class='caret'></span></button>"+
+              "<ul class='dropdown-menu'>"+
+                    "<li><a href='#'>Item</a></li>"+
+                    "<li><a href='#'>Coupon</a></li>"+
+                    "<li><a href='#'>Void</a></li>"+
+              "</ul>"+
+        "</td>"+
+          "<td><input type='number' class='form-control' style='width: 100px;'></td>"+
+          "<td><input type='number' class='form-control' min='0.01' step='0.01' max='2500' value='0.00' style='width: 100px;'/></td>"+
+          "<td><input type='number' class='form-control' min='0.01' step='0.01' max='2500' value='0.00' style='width: 100px;'/></td>"+
+         " <td><input class='form-control' style='width: 100px;' disabled/></td>"+
+        "</tr>");
+});
+
+</script>
+
+                </div>
+            </div>
+        </div>
+    </div>
+<br><br>
+</body>
+</html>
