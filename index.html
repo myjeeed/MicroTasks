@@ -26,24 +26,6 @@
         <div class="jumbotron">
             <h1>Extract summary information from a shopping receipt</h1>
             </div><br>
-            <!-- <div class="row">
-                <div class="col-md-4" id="stage">
-                    <br>
-                    <img src="resources/icons/receipt.png" height="100" id="stageimg"/><p></p>
-                    <p id="stagetext">1) Check if the receipt is readable</p>
-                </div>
-
-                <div class="col-md-4" >
-                    <img src="resources/icons/digitize.png" height="100" id="stageimg"/><p></p>
-                    <p id="stagetext">2) Enter the items in the forms</p>
-                </div>
-
-                <div class="col-md-4" >
-                    <img src="resources/icons/validate.png" height="100" id="stageimg"/><p></p>
-                    <p id="stagetext">3) click the submit button</p>
-                </div>
-            </div>
-        </div> -->
 
         <div class="row">
             <div class="col-md-5">
@@ -72,14 +54,15 @@
   <p>Is receipt valid?</p>
   <div class="dropdown">
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Yes
+    Select an option
     <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <li><a href="#" data-value="No, receipt is too blurry">No, receipt is too blurry</a></li>
-    <li><a href="#" data-value="No, receipt is fake">No, receipt is fake</a></li>
-    <li><a href="#" data-value="No, receipt is not in English">No, receipt is not in English</a></li>
-    <li><a href="#" data-value="No, contact information is not provided">No, contact information is not provided</a></li>
+    <li id="right"><a  href="#" data-value="Yes">Yes</a></li>
+    <li id="wrong"><a  href="#" data-value="No, receipt is too blurry">No, receipt is too blurry</a></li>
+    <li id="wrong"><a  href="#" data-value="No, receipt is fake">No, receipt is fake</a></li>
+    <li id="wrong"><a  href="#" data-value="No, receipt is not in English">No, receipt is not in English</a></li>
+    <li id="wrong"><a href="#" data-value="No, contact information is not provided">No, contact information is not provided</a></li>
   </ul>
 </div>
 <script>
@@ -87,8 +70,18 @@ $(".dropdown-menu li a").click(function(){
   $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
   $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
 });
+
+$(".rest").show();
+$("#right").click(function(){
+    $(".rest").show();
+});
+$("#wrong").click(function (){
+    $(".rest").hide();
+});
+
 </script>
 <br>
+<div class="rest">
  <p>Write down the transaction date:</p>
  
  <input type="date" class="form-control" placeholder="mm/dd/yyyy">    
@@ -126,6 +119,7 @@ $(".rd").click(function(){
     $("#amount").hide();
 });
 </script>
+</div>
 <br>
 <button type="button" class="btn btn-primary" id="prev-btn">Previous</button>
 <button type="button" class="btn btn-success" id="next-btn">Next</button>
