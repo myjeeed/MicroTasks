@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -9,8 +10,10 @@
     <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
 
     <!-- Local stylesheet -->
-    <link rel="stylesheet" href="resources/style.css">
-
+    <link rel="stylesheet" href="lib/css/style.css">
+    <!-- Local script -->
+    <script src="lib/js/jquery.panzoom.js"></script>
+    <script src="lib/js/script.js"></script>
 
 
     <title>MicroTask #1</title>
@@ -43,10 +46,26 @@
 
         <div class="row">
             <div class="col-md-5">
-                <div>
-                    <img src="resources/receipts/r1.jpeg" width="450" class="bold" id="receipt"/>
+                <div class="parent">
+                <div id="panzoom">
+                    <img src="resources/receipts/r1.jpeg" width="450"/>
                 </div>
+                </div>
+    
+            <div class="buttons">
+            <button class="zoom-in">Zoom In</button>
+            <button class="zoom-out">Zoom Out</button>
+            <input type="range" class="zoom-range">
+            <button class="reset">Reset</button></div>
             </div>
+            <script>
+            $('#panzoom').panzoom({
+            $zoomIn: $(".zoom-in"),
+            $zoomOut: $(".zoom-out"),
+            $zoomRange: $(".zoom-range"),
+            $reset: $(".reset")
+            });
+            </script>
             <div class="col-md-7">
                 <div class="form-group" id="receipt-input-form">
                     <button id="valid_receipt_btn" type="button" class="btn btn-success btn-lg">Valid and Readable</button>
@@ -56,8 +75,6 @@
         </div>
     </div>
 
-    <!-- Local script -->
-    <script src="resources/script.js"></script>
 </body>
 </html>
 
