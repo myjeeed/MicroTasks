@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="lib/css/style.css">
     <!-- Local script -->
     <script src="lib/js/jquery.panzoom.js"></script>
-  
+    
 
 
     <title>MicroTask #1</title>
@@ -25,7 +25,7 @@
     <div class="container">
         <div class="jumbotron">
             <h1>Extract summary information from 3 shopping receipts</h1>
-            <h3>#3 Receipt</h3>
+            <h3>#1 Receipt</h3>
             </div>
      
 
@@ -33,7 +33,7 @@
             <div class="col-md-5">
                 <div class="parent">
                 <div id="panzoom">
-                    <img src="resources/receipts/r1.jpeg" width="450"/>
+                    <img src="resources/receipts/r4.jpeg" width="450"/>
                 </div>
                 </div>
             <p></p>
@@ -90,7 +90,7 @@ $("#wrong").click(function (){
  <br>
 
  <p>Total</p>
- <input type="number" class="form-control" placeholder="0.00">
+ <span>$</span><input type="number" class="form-control" placeholder="0.00">
 <br>
 <p>Number of items purchased: <span style="color:red;">(excluding gas/fuel)</span></p>
 <div class="radio">
@@ -125,8 +125,8 @@ $(".rd").click(function(){
 <br>
 <!-- <button type="button" class="btn btn-primary" id="prev-btn">Previous</button>
 <button type="button" class="btn btn-success" id="next-btn">Next</button> -->
-<a class="pagenav" href="#null" onclick="javascript:history.back();"> <button type="button" class="btn btn-primary" >Previous</button></a>
-<a class="pagenav" href="submit.html"><button type="button" class="btn btn-success" >Submit</button></a>
+<button type="button" class="btn btn-primary" disabled>Previous</button>
+<a class="pagenav" href="pages/page2.html"><button type="button" class="btn btn-primary">Next</button></a>
 
 
                
