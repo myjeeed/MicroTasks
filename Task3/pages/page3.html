@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <!-- Boostrap and jQuery CDN links -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+    <script src="../lib/js/bootstrap-formhelpers.min.js"></script>
+
+    <!-- Local stylesheet -->
+    <link rel="stylesheet" href="../lib/css/style.css">
+    
+    
+    
+
+
+    <title>MicroTask #3</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Image Annotation</h1>
+            <h3>#3 Image</h3>
+            </div>
+     
+            <p>Look at the person in the red box, and choose what the person is 
+              feeling. </p>
+              <br>
+        <div class="row">
+            <div class="col-md-5">
+          <img src="../resources/images/pic3.png" width="450"/>
+          </div>
+<div class="col-md-7">
+  <p>1. How does the person in the red box feel in the image?</p>
+  <form role="form">
+    <label class="radio-inline">
+      <img src="../resources/faces/happy.jpg" width="80"/><br><input type="radio" name="optradio">
+    </label>
+    <label class="radio-inline">
+      <img src="../resources/faces/neutral.jpg" width="80"/><br><input type="radio" name="optradio">
+    </label>
+    <label class="radio-inline">
+      <img src="../resources/faces/sad.jpg" width="80"/><br><input type="radio" name="optradio">
+    </label>
+  </form>
+  <br><br>
+  <p>2. Select the gender of the person in the red box:</p>
+  <form role="form">
+    <label class="radio-inline">
+      <input type="radio" name="optradio">Male
+    </label>
+    <label class="radio-inline">
+     <input type="radio" name="optradio">Female
+    </label>
+  </form>
+  <br><br>
+  <p>3. How old does the person in the red box look like?</p>
+  <form role="form">
+    <label class="radio-inline">
+      <input type="radio" name="optradio">Kid (0-12)
+    </label>
+    <label class="radio-inline">
+     <input type="radio" name="optradio">Teenager (13-20)
+    </label>
+    <label class="radio-inline">
+     <input type="radio" name="optradio">Adult (more than 20)
+    </label>
+  </form>
+
+
+
+<br><br>
+<a class="pagenav" href="#null" onclick="javascript:history.back();"> <button type="button" class="btn btn-primary" >Previous Image</button></a>
+<a class="pagenav" href="submit.html"><button type="button" class="btn btn-success">Submit</button></a>
+
+
+               
+            </div>
+        </div>
+    </div>
+<br><br>
+</body>
+</html>
+
+<!--icons by lastspark, Arthur Shlain-->
