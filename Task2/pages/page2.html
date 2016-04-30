@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <!-- Boostrap and jQuery CDN links -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+    <script src="../lib/js/bootstrap-formhelpers.min.js"></script>
+
+    <!-- Local stylesheet -->
+    <link rel="stylesheet" href="../lib/css/style.css">
+    <!-- Local script -->
+    <script src="../lib/js/jquery.panzoom.js"></script>
+    
+
+
+    <title>MicroTask #2</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Classify Receipt</h1>
+            <h3>#2 Receipt</h3>
+            </div>
+     
+
+        <div class="row">
+            <div class="col-md-5">
+                <div class="parent">
+                <div id="panzoom">
+                    <img src="../resources/receipts/r2.jpg" width="450"/>
+                </div>
+                </div>
+            <p></p>
+            <div class="buttons" style="text-align:center;">
+            <button class="zoom-in">Zoom In</button>
+            <button class="zoom-out">Zoom Out</button>
+            <input type="range" class="zoom-range">
+            <button class="reset">Reset</button></div>
+            </div>
+            <script>
+            $('#panzoom').panzoom({
+            $zoomIn: $(".zoom-in"),
+            $zoomOut: $(".zoom-out"),
+            $zoomRange: $(".zoom-range"),
+            $reset: $(".reset")
+            });
+            </script>
+
+<div class="col-md-7">
+  <p>1. Is receipt readable?</p>
+    <button id="right" type="button" class="btn btn-success">Yes</button>
+  <button id="wrong" type="button" class="btn btn-danger">No</button>
+  <script>
+$(".rest").show();
+$("#right").click(function(){
+    $(".rest").show();
+});
+$("#wrong").click(function (){
+    $(".rest").hide();
+});
+
+</script>
+<br>
+<div class="rest">
+  <br>
+ <p>The receipt's details are usually at the top or bottom of the receipt.</p>
+<br><br>
+
+<p>2. Find and enter the business phone number:</p> 
+ <form><input type="text" class="bfh-phone" data-format="(ddd) ddd-dddd"></input></form>
+ <br>
+<p>3. Find and enter the business address:</p> 
+<div class="row">
+  <div class="col-xs-7">
+ <input type="text" class="form-control" placeholder="street"/> 
+</div></div>
+<br>
+  <div class="row">
+  <div class="col-xs-4">
+  <input type="text" class="form-control" placeholder="city"/>
+  </div>
+  <div class="col-xs-3">
+   <input type="text" class="form-control" placeholder="state"/>
+ </div>
+   </div>
+   <br>
+   <div class="row">
+    <div class="col-xs-3">
+    <input type="text" class="form-control col-xs-4" placeholder="zipcode"/> 
+    </div></div>  
+ <br>
+</div>
+<br>
+<!-- <button type="button" class="btn btn-primary" id="prev-btn">Previous</button>
+<button type="button" class="btn btn-success" id="next-btn">Next</button> -->
+<button type="button" class="btn btn-primary" disabled>Previous</button>
+<a class="pagenav" href="page3.html"><button type="button" class="btn btn-primary">Next</button></a>
+
+
+               
+            </div>
+        </div>
+    </div>
+<br><br>
+</body>
+</html>
+
+<!--icons by lastspark, Arthur Shlain-->
