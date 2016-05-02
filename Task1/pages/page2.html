@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../lib/css/style.css">
     <!-- Local script -->
     <script src="../lib/js/jquery.panzoom.js"></script>
-
+    
 
 
     <title>MicroTask #1</title>
@@ -25,7 +25,7 @@
     <div class="container">
         <div class="jumbotron">
             <h1>Extract summary information from 3 shopping receipts</h1>
-            <h3>#2 Receipt</h3>
+            <h3>#1 Receipt</h3>
             </div>
      
 
@@ -33,7 +33,7 @@
             <div class="col-md-5">
                 <div class="parent">
                 <div id="panzoom">
-                    <img src="../resources/receipts/r2.jpeg" width="450"/>
+                    <img src="../resources/receipts/r5.jpeg" width="450"/>
                 </div>
                 </div>
             <p></p>
@@ -53,7 +53,7 @@
             </script>
 
 <div class="col-md-7">
-  <p>Is receipt valid?</p>
+  <p>1. Is receipt readable?</p>
   <div class="dropdown">
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Select an option
@@ -62,7 +62,6 @@
   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
     <li id="right"><a  href="#" data-value="Yes">Yes</a></li>
     <li id="wrong"><a  href="#" data-value="No, receipt is too blurry">No, receipt is too blurry</a></li>
-    <li id="wrong"><a  href="#" data-value="No, receipt is fake">No, receipt is fake</a></li>
     <li id="wrong"><a  href="#" data-value="No, receipt is not in English">No, receipt is not in English</a></li>
     <li id="wrong"><a href="#" data-value="No, contact information is not provided">No, contact information is not provided</a></li>
   </ul>
@@ -84,31 +83,31 @@ $("#wrong").click(function (){
 </script>
 <br>
 <div class="rest">
- <p>Write down the transaction date:</p>
+ <p>2. Write down the transaction date:</p>
  
  <input type="date" class="form-control" placeholder="mm/dd/yyyy">    
  <br>
 
- <p>Total</p>
- <input type="number" class="form-control" placeholder="0.00">
+ <p>3. Total price is:</p>
+ <input type="number" class="form-control" placeholder="$0.00">
 <br>
-<p>Number of items purchased: <span style="color:red;">(excluding gas/fuel)</span></p>
+<p>4. What type of receipt it is?</p>
 <div class="radio">
     <label>
       <input type="radio" name="optionsRadios" id="optionsRadios1" value="Only gas/fuel listed" checked class="rd">
-      Only gas/fuel listed
+      Gas/fuel
     </label><br>
     <label>
       <input type="radio" name="optionsRadios" id="optionsRadios1" value="No items- Credit slip" class="rd">
-      No items- Credit slip
+      Credit slip
     </label><br>
     <label>
       <input type="radio" name="optionsRadios" id="optionsRadios1" value="No items- Return slip" class="rd">
-      No items- Return slip
+      Return slip
     </label><br>
     <label>
       <input type="radio" name="optionsRadios" id="optionsRadios1" value="yes"  class="rdnumber">
-      Estimated number of items are:
+      Regular receipt
     </label>
 </div>
 <input type="number" class="form-control" placeholder="0" id="amount">
