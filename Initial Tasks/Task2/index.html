@@ -55,12 +55,12 @@
 
 <div class="col-md-7">
   <p>1. Is receipt readable?</p>
-  <button id="right" type="button" class="btn btn-success">Yes</button>
+  <button id="right" type="button" class="btn btn-primary">Yes</button>
   <button id="wrong" type="button" class="btn btn-danger">No</button>
   <script>
 $(".rest").show();
 $("#right").click(function(){
-    $("#wrong").hide();
+    $("#right").css('background-color','green');
     $(".rest").show();
 });
 $("#wrong").click(function (){
