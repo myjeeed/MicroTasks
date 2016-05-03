@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <!-- Boostrap and jQuery CDN links -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+
+    <!-- Local stylesheet -->
+    <link rel="stylesheet" href="../lib/css/style.css">
+    <link rel="stylesheet" href="../lib/css/hint.css">
+    <!-- Local script -->
+    <script src="../lib/js/jquery.panzoom.js"></script>
+
+    <title>MicroTask #1</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Extract summary information from 3 shopping receipts</h1>
+            <h3>2nd Receipt</h3>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-5">
+                <div class="parent">
+                    <span class="hint--right hint--info receipt-reader" data-hint="Zoom?">
+                    <div id="panzoom">
+                        <img src="../resources/receipts/r2.jpeg" width="450"/>
+                    </div>
+                </span>
+                </div>
+                <p></p>
+                <div class="buttons" style="text-align:center;">
+                    <button class="zoom-in btn btn-default">Zoom In</button>
+                    <button class="zoom-out btn btn-default">Zoom Out</button>
+                    <input type="range" class="zoom-range">
+                    <button class="reset btn btn-default">Reset</button>
+                </div>
+            </div>
+            <script>
+                $('#panzoom').panzoom({
+                    $zoomIn: $(".zoom-in"),
+                    $zoomOut: $(".zoom-out"),
+                    $zoomRange: $(".zoom-range"),
+                    $reset: $(".reset")
+                });
+            </script>
+
+            <div class="col-md-7">
+                <span class="sub-taks-title">Is receipt valid?</span>
+                <div class="dropdown">
+                    <span class="hint--right hint--info" data-hint="Readable?">
+      <button class="btn btn-default dropdown-toggle" style="width: 250px;" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Select an option
+    <span class="caret"></span>
+
+                    </button>
+
+                    <script>
+                    </script>
+
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li id="right"><a data-value="Yes">Yes</a></li>
+                        <li id="wrong"><a data-value="No, receipt is too blurry">No, receipt is too blurry</a></li>
+                        <li id="wrong"><a data-value="No, receipt is fake">No, receipt is fake</a></li>
+                        <li id="wrong"><a data-value="No, receipt is not in English">No, receipt is not in English</a></li>
+                        <li id="wrong"><a data-value="No, contact information is not provided">No, contact information is not provided</a></li>
+                    </ul>
+                    </span>
+                </div>
+                <script>
+                    $(".dropdown-menu li a").click(function() {
+                        $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
+                        $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
+                    });
+
+                    $(".rest").show();
+                    $("#right").click(function() {
+                        $(".rest").show();
+                    });
+                    $("#wrong").click(function() {
+                        $(".rest").hide();
+                    });
+                </script>
+                <br>
+                <div class="rest">
+                    <span class="sub-taks-title">Write down the transaction date:</span>
+                    <br/>
+                    <span class="hint--right hint--info" style="width: 250px;" data-hint="Date?">
+                    <input type="date" class="form-control" placeholder="mm/dd/yyyy">
+                </span>
+                    <br/>
+                    <br/>
+                    <span class="sub-taks-title">Total amount:</span>
+                    <br/>
+                    <span class="hint--right hint--info" style="width: 250px;" data-hint="Total?">
+                        <input type="number" class="form-control" placeholder="0.00">
+                    </span>
+
+                    <br/>
+                    <br/>
+                    <span class="hint--right hint--info" data-hint="Regular?">
+                    <div class="radio items-purchased">
+                        <span class="sub-taks-title">Number of items purchased: <span style="color:red;">(excluding gas/fuel)</span></span>
+                    <br/>
+
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="Only gas/fuel listed" checked class="rd"> Only gas/fuel listed
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="No items- Credit slip" class="rd"> No items- Credit slip
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="No items- Return slip" class="rd"> No items- Return slip
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="yes" class="rdnumber"> Estimated number of items are:
+                    </label>
+                </div>
+                </span>
+                <br/>
+                <span class="sub-taks-title amount">Number of items in receipt:</span>
+                <br/>
+                <span class="hint--right hint--info" data-hint="Enter the number of items you counted in the receipt here!">
+
+                <input type="number" class="form-control amount" placeholder="0">
+            </span>
+                <script>
+                    $(".amount").hide();
+                    $(".rdnumber").click(function() {
+                        $(".amount").show();
+                    });
+                    $(".rd").click(function() {
+                        $(".amount").hide();
+                    });
+                </script>
+            </div>
+            <br>
+            <!-- <button type="button" class="btn btn-primary" id="prev-btn">Previous</button>
+            <button type="button" class="btn btn-success" id="next-btn">Next</button> -->
+            <a class="pagenav" href="#null" onclick="javascript:history.back();"> <button type="button" class="btn btn-primary" >Previous</button></a>
+            <a class="pagenav" href="page3.html"><button type="button" class="btn btn-primary" >Next</button></a>
+
+
+
+        </div>
+    </div>
+    </div>
+    <br>
+    <br>
+</body>
+
+</html>
+
+<!--icons by lastspark, Arthur Shlain-->
